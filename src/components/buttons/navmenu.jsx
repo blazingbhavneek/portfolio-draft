@@ -8,7 +8,7 @@ const NavMenu = () => {
     const {menuOpen, toggleMenu} = useContext(AppContext);
     return (
         <IconContext.Provider value={{ color: "#333333", size: "25px" }}>
-            <div onClick={()=>{toggleMenu(!menuOpen)}}>
+            <div onClick={()=>{toggleMenu(!menuOpen)}} className="mr-[10px]">
                 {menuOpen ? <RxCross2 /> : <IoMdMenu />}
             </div>
         </IconContext.Provider>

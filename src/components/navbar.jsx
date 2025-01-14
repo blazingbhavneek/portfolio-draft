@@ -6,8 +6,9 @@ import Logo from '../assets/my-logo.svg'
 const Navbar = (props) => {
   return (
     <div className="z-[50] fixed top-0 left-0 bg-white w-[98vw] m-[10px] p-[5px] border-2 border-solid border-red-500 flex flex-row justify-between items-center gap-2">
-      <div>
-        <img src={Logo} alt="My Logo" width="50" height="50" />
+      <div className="flex flex-row justify-between items-center gap-[10px]">
+        <img src={Logo} alt="My Logo" width="40" height="40" />
+        <div className="font-lato text-[16px] sm:flex hidden">Bhavneek Singh</div>
       </div>
       <div className="flex-row gap-2">
         <div className="sm:flex hidden flex flex-row gap-[10px] mr-[10px]">
