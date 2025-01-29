@@ -48,9 +48,9 @@ import { motion,
   
     const x = useTransform(baseX, (v) => `${wrap(-2*movementWidth, -movementWidth, v)}px`);
     return (
-    <div className="w-screen bg-white flex justify-center items-center overflow-hidden whitespace-nowrap">
+    <div className="bg-transparent w-screen flex justify-center items-center overflow-hidden whitespace-nowrap">
         <motion.div style={{x}}
-          className={`w-[calc(100vw-20px)] font-playfair text-[${props.textSize}px] flex flex-row gap-[${props.gapBetween}px] justify-start flex-nowrap`}
+          className={`bg-transparent w-[calc(100vw-20px)] font-playfair text-[${props.textSize}px] flex flex-row gap-[${props.gapBetween}px] justify-start flex-nowrap`}
         >
           <p ref={pRef} className="m-0 p-0">{props.text}</p>
           <p className="m-0 p-0">{props.text}</p>
