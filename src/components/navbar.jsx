@@ -39,7 +39,7 @@ const Navbar = (props) => {
   });
 
   return (
-    <motion.div ref={pRef} style={{y}} className="z-[1000] fixed top-[0] left-0 bg-white w-[100vw] py-[20px] px-[20px] flex flex-row justify-between items-center gap-2">
+    <motion.div ref={pRef} style={{y}} className="shadow-sm z-[1000] fixed top-[0] left-0 bg-white w-[100vw] py-[20px] px-[20px] flex flex-row justify-between items-center gap-2">
       <div className="flex flex-row justify-between items-center gap-[10px]">
         <img src={Logo} alt="My Logo" width="40" height="40"/>
       </div>
