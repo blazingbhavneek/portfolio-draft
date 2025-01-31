@@ -4,12 +4,14 @@ const PartialText = (props) => {
     const content = props.text;
     const charCount = content.length;
     const n= Math.floor(charCount*props.percent/100)
-    const firstNChars = content.slice(0, n);
-    const restOfContent = content.slice(n, charCount);
+    const words = content.split(" ");
+    const firstNWords = words.slice(0, n).join(" ");
+    const restOfContent = words.slice(n).join(" ");
+
     return (
-        <div className="font-playfair bg-transparent text-white text-2xl">
+        <div className="font-lato font-medium bg-transparent text-white text-2xl">
             <span className="text-gray-900">
-                {firstNChars}
+                {firstNWords}
             </span>
             {restOfContent}
         </div>

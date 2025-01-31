@@ -17,7 +17,7 @@ const About = () => {
 
   const x = useTransform(
     smoothScroll,
-    [0.7 * window.innerHeight, 1.6*window.innerHeight],
+    [0.7 * window.innerHeight, 2*window.innerHeight],
     [0, 100],
     { clamp: true }
   );
@@ -27,7 +27,7 @@ const About = () => {
   });
 
   return (
-    <div className="border-solid border-[5px] border-teal-500 w-screen h-[200vh] bg-white flex justify-center items-center">
+    <div className="w-screen h-[100vh] bg-white flex justify-center items-center">
         <div className="w-[50%] sticky top-1/2 -translate-y-1/2">
             <PartialText 
                 text="Hey! I'm Bhavneek. 

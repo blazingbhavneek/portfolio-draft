@@ -30,9 +30,9 @@ const Navbar = (props) => {
   })
 
   return (
-    <motion.div ref={pRef} style={{y}} className="shadow-md z-[1000] fixed top-[0] left-0 bg-white w-[100vw] py-[20px] px-[20px] flex flex-row justify-between items-center gap-2">
-      <div className="flex flex-row justify-between items-center gap-[10px]">
-        <img src={Logo} alt="My Logo" width="40" height="40"/>
+    <motion.div ref={pRef} style={{y}} className="shadow-md z-[1000] fixed top-[0] left-0 bg-white w-[100vw] py-[10px] px-[20px] flex flex-row justify-between items-center gap-2">
+      <div className="flex flex-row justify-between items-center">
+        <img src={Logo} alt="My Logo" width="45" height="45"/>
       </div>
       <div className="flex-row gap-2">
         <div className="sm:flex hidden flex flex-row gap-[10px] mr-[10px]">
