@@ -50,7 +50,7 @@ import { motion,
     return (
     <div className="bg-transparent w-screen flex justify-center items-center overflow-hidden whitespace-nowrap">
         <motion.div style={{x}}
-          className={`bg-transparent w-[calc(100vw-20px)] ${props.textProps} flex flex-row gap-[${props.gapBetween}px] justify-start flex-nowrap`}
+          className={`bg-transparent w-[100vw] ${props.textProps} flex flex-row gap-[${props.gapBetween}px] justify-start flex-nowrap`}
         >
           <p ref={pRef} className="m-0 p-0">{props.text}</p>
           <p className="m-0 p-0">{props.text}</p>

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import LinkButtons from "./buttons/links"
+import LinkButtons from "../buttons/links"
 
 const Menu = (props) => {
   return (

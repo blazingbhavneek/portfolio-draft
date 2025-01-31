@@ -1,4 +1,4 @@
-import VelocityText from "./velocityText";
+import VelocityText from "./misc/velocityText";
 import Mine from "../../src/assets/mine.jpg";
 import MineBgRem from "../../src/assets/minebgrem.png";
 import {motion} from "framer-motion";
