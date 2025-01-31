@@ -1,14 +1,16 @@
 import PartialText from "./misc/partialText";
-import { motion, 
+import { useState } from "react";
+import { 
+    // motion, 
     useMotionValue,
     useTransform,
     useScroll,
-    useVelocity,
+    // useVelocity,
     useSpring,
-    useAnimationFrame,
+    // useAnimationFrame,
     useMotionValueEvent
   } from "framer-motion";
-  import { wrap } from "@motionone/utils";
+//   import { wrap } from "@motionone/utils";
 const About = () => {
     const textPercent = useMotionValue(0);
     const { scrollY } = useScroll();
@@ -22,14 +24,18 @@ const About = () => {
         [0, 100], 
         { clamp: true }
       );
-    useAnimationFrame(() => {
-        textPercent.set(x);
+
+
+    const [renderTrigger, setRenderTrigger] = useState(false);
+    useMotionValueEvent(x, "change", () => {
+        textPercent.set(x.get());
         console.log(x.get());
+        setRenderTrigger((prev) => !prev); 
     });
 
     return (
         <div className="border-solic border-[5px] border-teal-500 w-screen h-screen bg-white flex justify-center items-center">
-            <PartialText text="Hello My name is Bhavneek" percent={textPercent}></PartialText>
+            <PartialText text="Hello My name is Bhavneek" percent={textPercent} trigger={renderTrigger} />
         </div>
     )
 }
