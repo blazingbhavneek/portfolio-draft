@@ -6,7 +6,6 @@ import { motion,
   useMotionValue,
   useScroll,
   useSpring,
-  useAnimationFrame,
   useMotionValueEvent
 } from "framer-motion";
 import {useState, useRef, useEffect} from "react";
@@ -23,20 +22,12 @@ const Navbar = (props) => {
   }, []);
 
   const { scrollY } = useScroll();
-  const [scrollDirection, setScrollDirection] = useState(1)
+
   useMotionValueEvent(scrollY, "change", (current) => {
   const diff = current - scrollY.getPrevious()
-  setScrollDirection(diff > 0 ? 1 : -1)
+  if(diff > 0) y.set(0);
+  else y.set(-navHeight);
   })
-
-  useAnimationFrame(() => {
-    if(scrollDirection===1){
-      y.set(0);
-    }
-    else{
-      y.set(-navHeight);
-    }
-  });
 
   return (
     <motion.div ref={pRef} style={{y}} className="shadow-md z-[1000] fixed top-[0] left-0 bg-white w-[100vw] py-[20px] px-[20px] flex flex-row justify-between items-center gap-2">

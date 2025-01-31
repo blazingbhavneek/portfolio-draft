@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-// import { useRef, useState } from "react";
 const PartialText = (props) => {
     
     const content = props.text;
@@ -8,7 +7,7 @@ const PartialText = (props) => {
     const firstNChars = content.slice(0, n);
     const restOfContent = content.slice(n, charCount);
     return (
-        <div className="font-playfair bg-transparent text-white text-2xl flex justify-center items-center">
+        <div className="font-playfair bg-transparent text-white text-2xl">
             <span className="text-gray-900">
                 {firstNChars}
             </span>
