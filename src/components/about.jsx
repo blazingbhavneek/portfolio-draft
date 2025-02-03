@@ -1,6 +1,7 @@
 import PartialText from "./misc/partialText";
 import { useState } from "react";
 import {
+  motion,
   useTransform,
   useScroll,
   useSpring,
@@ -22,13 +23,28 @@ const About = () => {
     { clamp: true }
   );
 
+  const scale = useTransform(
+    smoothScroll,
+    [1 * window.innerHeight, 2*window.innerHeight],
+    [1, 0.7],
+    { clamp: true }
+  );
+
+  const rotate = useTransform(
+    smoothScroll,
+    [1 * window.innerHeight, 2*window.innerHeight],
+    [0, -10],
+    { clamp: true }
+  );
+
   useMotionValueEvent(x, "change", (latest) => {
     setCurrentPercent(latest);
   });
 
   return (
-    <div className="w-screen h-[100vh] bg-white flex justify-center items-center">
-        <div className="w-[50%] sticky top-1/2 -translate-y-1/2">
+    <div className="bg-black sticky top-1/2 -translate-y-1/2 z-0">
+    <motion.div style = {{scale, rotate}} className="w-screen h-[100vh] bg-white flex justify-center items-center">
+        <div className="w-[50%]">
             <PartialText 
                 text="Hey! I'm Bhavneek. 
                 During the day, I teach computers to be smarter (Programming and ML), and by night, I'm probably making Indian style Udon in Kobe, Japan. 
@@ -38,6 +54,7 @@ const About = () => {
                 percent={currentPercent} 
             />
       </div>
+    </motion.div>
     </div>
   );
 };

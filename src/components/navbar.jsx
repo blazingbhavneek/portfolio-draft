@@ -25,8 +25,8 @@ const Navbar = (props) => {
 
   useMotionValueEvent(scrollY, "change", (current) => {
   const diff = current - scrollY.getPrevious()
-  if(diff > 0) y.set(0);
-  else y.set(-navHeight);
+  if(diff > 0) y.set(-navHeight);
+  else y.set(0);
   })
 
   return (
