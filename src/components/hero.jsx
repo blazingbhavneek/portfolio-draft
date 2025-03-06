@@ -5,7 +5,7 @@ import {motion} from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="w-screen h-screen bg-white flex flex-col justify-center items-center overflow-hidden whitespace-nowrap relative">
+    <div className="h-full w-full rounded-md bg-white flex flex-col justify-center items-center overflow-hidden whitespace-nowrap relative">
       <div className="z-20 bg-transparent">
         <VelocityText text="Bhavneek" textProps="font-playfair text-[36px] text-gray-900" gapBetween={20} baseVelocity={100} />
         <VelocityText text="Singh" textProps="font-playfair text-[36px] text-gray-900" gapBetween={20} baseVelocity={-100} />

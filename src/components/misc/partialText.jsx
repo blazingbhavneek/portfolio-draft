@@ -3,17 +3,16 @@ const PartialText = (props) => {
     
     const content = props.text;
     const charCount = content.length;
-    const n= Math.floor(charCount*props.percent/100)
-    const words = content.split(" ");
-    const firstNWords = words.slice(0, n).join(" ");
-    const restOfContent = words.slice(n).join(" ");
+    const n = Math.floor(charCount * props.percent / 100);
+    const visibleText = content.slice(0, n);
+    const hiddenText = content.slice(n);
 
     return (
-        <div className="font-lato font-medium bg-transparent text-white text-2xl">
-            <span className="text-gray-900">
-                {firstNWords}
+        <div className={`font-lato font-bold bg-transparent text-[${props.bgcolor}] text-4xl`}>
+            <span className={`text-[${props.txtcolor}]`}>
+                {visibleText}
             </span>
-            {restOfContent}
+            {hiddenText}
         </div>
     );
 }
