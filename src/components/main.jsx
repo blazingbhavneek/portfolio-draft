@@ -2,9 +2,10 @@
 import {motion} from "framer-motion";
 import Hero from '../components/hero.jsx'
 import About from './about.jsx';
+import Photography from "./photography.jsx";
 
 const Main = () => {
-    const transition={ type: "spring", stiffness: 100, damping: 30 };
+    const transition = { type: "spring", stiffness: 80, damping: 30, delay: 0.5 };
 
   return (
   <div className="flex h-screen w-screen items-center justify-center">
@@ -15,7 +16,7 @@ const Main = () => {
         animate={{ scale: 1, x: 0, y: 0 }}
         transition={transition}
         >
-            <About></About>
+            <About />
         </motion.div>
     
         <motion.div className="col-span-1 row-span-2 bg-lime-200  flex items-center justify-center"
@@ -26,18 +27,15 @@ const Main = () => {
             <p>Broccoli</p>
         </motion.div>
     
-        <motion.div className="col-span-1 row-span-4 bg-yellow-200  flex items-center justify-center"
+        <motion.div className="col-span-1 row-span-4 bg-black flex items-center justify-center"
         initial={{ scale: 0, x: "50%", y: "0%" }}
         animate={{ scale: 1, x: 0, y: 0 }}
         transition={transition}
         >
-            <p>Tamago</p>
+            <Photography />
         </motion.div>
     
         <motion.div className="col-span-2 row-span-3 bg-tan-200  flex items-center justify-center"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1}}
-        transition={transition}
         >
             <Hero></Hero>
         </motion.div>

@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 const PartialText = (props) => {
-    
     const content = props.text;
     const charCount = content.length;
     const n = Math.floor(charCount * props.percent / 100);
@@ -8,8 +7,8 @@ const PartialText = (props) => {
     const hiddenText = content.slice(n);
 
     return (
-        <div className={`font-lato font-bold bg-transparent text-[${props.bgcolor}] text-4xl`}>
-            <span className={`text-[${props.txtcolor}]`}>
+        <div className="font-lato font-bold bg-transparent text-4xl" style={{ color: props.bgcolor }}>
+            <span style={{ color: props.txtcolor }}>
                 {visibleText}
             </span>
             {hiddenText}
