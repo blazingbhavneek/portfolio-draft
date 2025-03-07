@@ -7,7 +7,7 @@ const PartialText = (props) => {
     const hiddenText = content.slice(n);
 
     return (
-        <div className="font-lato font-bold bg-transparent text-4xl" style={{ color: props.bgcolor }}>
+        <div className={props.txtProps} style={{ color: props.bgcolor }}>
             <span style={{ color: props.txtcolor }}>
                 {visibleText}
             </span>

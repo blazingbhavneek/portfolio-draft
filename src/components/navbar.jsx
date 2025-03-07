@@ -47,5 +47,6 @@ const Navbar = (props) => {
     </motion.div>
   )
 }
+<a href="https://lordicon.com/">Icons by Lordicon.com</a>
 
 export default Navbar
