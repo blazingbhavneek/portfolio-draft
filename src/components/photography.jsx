@@ -60,7 +60,7 @@ export default function Photography() {
           text="Photography" 
           bgcolor="transparent"
           txtcolor="white"
-          txtProps = "font-lato relative p-[5px] text-white text-3xl font-bold z-10"
+          txtProps = "font-banger relative p-[5px] text-white text-3xl font-bold z-10"
           percent={currentPercent} 
       />
     </motion.div>

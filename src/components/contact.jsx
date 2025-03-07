@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 import Lottie from "lottie-react";
 import { useState, useRef, useEffect } from "react";
-import PhoneIn from '../assets/lottie/phone-in.json';
-import PhoneHov from '../assets/lottie/phone-hover.json';
-import PhoneOut from '../assets/lottie/phone-out.json';
+import ChatIn from '../assets/lottie/chat-in.json';
+import ChatHov from '../assets/lottie/chat-hover.json';
 import PartialText from "./misc/partialText";
 
 const Contact = () => {
@@ -45,8 +44,7 @@ const Contact = () => {
         <Lottie 
           key={isHovered}
           lottieRef={lottieRef}
-          animationData={isHovered === 2 ? PhoneOut : isHovered === 1 ? PhoneHov : PhoneIn
-          }
+          animationData={isHovered > 0 ? ChatHov : ChatIn}
           loop={isHovered > 0 ? 0 : 1} 
           speed={0.5}
         />
