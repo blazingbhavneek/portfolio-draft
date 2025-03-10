@@ -18,7 +18,7 @@ const Main = () => {
     const resume_colors = ['#b9d025', '#00e7cb', '#ffc66f'];
     const contact_colors = ['#480000', '#172400', '#00396b'];
     const hero_colors = ['#e7c4ff', '#fe9abe', '#c0fcf7'];
-    const language_colors = ['#ff4a1d', '#00aa8b', '#c163ea'];
+    const language_colors = ['#00aa8b', '#ff4a1d', '#c163ea'];
 
 
     useEffect(() => {
