@@ -2,12 +2,13 @@
 import {motion} from "framer-motion";
 import { useEffect, useState } from "react";
 import Hero from '../components/hero.jsx'
-import About from './about.jsx';
-import Photography from "./photography.jsx";
-import Contact from "./contact.jsx";
-import Language from "./language.jsx";
-import Projects from "./projects.jsx";
-import Resume from "./resume.jsx";
+import About from '../components/about.jsx';
+import Photography from "../components/photography.jsx";
+import Contact from "../components/contact.jsx";
+import Language from "../components/language.jsx";
+import Projects from "../components/projects.jsx";
+import Resume from "../components/resume.jsx";
+import { Link } from "react-router-dom";
 
 const Main = () => {
     const transition = { type: "spring", stiffness: 80, damping: 30, delay: 0.5 };
@@ -43,8 +44,9 @@ const Main = () => {
             animate={{scale: 1, x: 0, y: 0}}
             transition={transition}
         >
-
-            <About />
+            <Link to="/about"> 
+                <About /> 
+            </Link>
         </motion.div>
         
         <motion.div className="rounded-3xl col-span-1 row-span-1  flex items-center justify-center"
