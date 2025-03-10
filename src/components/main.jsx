@@ -76,7 +76,14 @@ const Main = () => {
         animate={{ scale: 1, x: 0, y: 0 }}
         transition={transition}
         >
-            <Photography />
+            <a 
+                href="https://www.behance.net/blazingbhavneek" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full h-full flex items-center justify-center bg-transparent border-none cursor-pointer"
+            >
+                <Photography />
+            </a>
         </motion.div>
     
         <motion.div className="rounded-3xl col-span-1 row-span-1  flex items-center justify-center"
