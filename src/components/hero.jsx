@@ -6,7 +6,7 @@ import {motion} from "framer-motion";
 const Hero = () => {
   const transition = { type: "spring", stiffness: 200, damping: 30};
   return (
-    <div className="rounded-3xl h-full w-full bg-[#fe9abe] flex flex-col justify-center items-center overflow-hidden whitespace-nowrap relative">
+    <div className="rounded-3xl h-full w-full bg-transparent flex flex-col justify-center items-center overflow-hidden whitespace-nowrap relative">
       <motion.div className="z-20 bg-transparent"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1}}

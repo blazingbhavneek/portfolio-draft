@@ -43,6 +43,10 @@ export default function Photography() {
   return (
     <motion.div
       className="rounded-3xl col-span-1 row-span-4 flex items-center justify-center relative overflow-hidden w-full h-full"
+      animate={{scale: 1}}
+      whileHover={{ scale: 1.1}}
+      whileTap={{ scale: 1.05}} 
+      transition={{ duration: 0.1 }}
     >
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         {images.map((src, i) => (

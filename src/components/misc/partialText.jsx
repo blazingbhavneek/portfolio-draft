@@ -4,14 +4,12 @@ const PartialText = (props) => {
     const charCount = content.length;
     const n = Math.floor(charCount * props.percent / 100);
     const visibleText = content.slice(0, n);
-    const hiddenText = content.slice(n);
 
     return (
         <div className={props.txtProps} style={{ color: props.bgcolor }}>
             <span style={{ color: props.txtcolor }}>
                 {visibleText}
             </span>
-            {hiddenText}
         </div>
     );
 }

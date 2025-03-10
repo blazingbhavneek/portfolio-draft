@@ -1,21 +1,15 @@
-import { useState, useRef, useEffect } from "react";
-import Lottie from "lottie-react";
-import CodeIn from '../assets/lottie/code-in.json';
-import CodeHov from '../assets/lottie/code-hover.json';
+import { useState, useEffect } from "react";
 import PartialText from "./misc/partialText";
 import {motion} from "framer-motion";
 
 
-const Projects = () => {
+const Resume = () => {
   const [currentPercent, setCurrentPercent] = useState(0);
-  const [isHovered, setIsHovered] = useState(-1);
-  const lottieRef = useRef();
 
   useEffect(() => {
         const duration = 2500; 
         const intervalTime = 50; 
         const increment = (100 * intervalTime) / duration;
-        setIsHovered(-1);
         const interval = setInterval(() => {
           setCurrentPercent((prevPercent) => {
             const newPercent = prevPercent + increment;
@@ -32,32 +26,16 @@ const Projects = () => {
 
   return (
     <motion.div className="w-full h-full flex flex-col justify-center items-center overflow-hidden font-banger text-4xl gap-[10px]"
-    onMouseEnter={() => {
-      setIsHovered(1);
-      lottieRef.current.play();
-    }}
-    onMouseLeave={() => {
-      setIsHovered(2);
-      lottieRef.current.play();
-    }}
+
       animate={{scale: 1}}
       whileHover={{ scale: 1.1}}
       whileTap={{ scale: 1.05}} 
       transition={{ duration: 0.1 }}
     >
-      <div className="w-[50px] h-[50px]">
-        <Lottie
-          key={isHovered}
-          lottieRef={lottieRef}
-          animationData={isHovered > 0 ? CodeHov : CodeIn}
-          loop={isHovered > 0 ? 0 : 1} 
-          speed={0.5}
-        />
-      </div>
       <PartialText 
-        text="Projects" 
-        bgcolor="#1f82fa"
-        txtcolor="#fdebc2"
+        text="Resume" 
+        bgcolor="#b9d025"
+        txtcolor="#172303"
         percent={currentPercent} 
         txtProps="font-banger text-5xl"
         />
@@ -65,4 +43,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Resume;

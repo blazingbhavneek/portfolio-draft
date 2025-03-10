@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Lottie from "lottie-react";
 import AccountIn from '../assets/lottie/account-in.json';
 import AccountHov from '../assets/lottie/account-hover.json';
+import {motion} from "framer-motion";
 
 const About = () => {
   const [currentPercent, setCurrentPercent] = useState(0);
@@ -29,7 +30,7 @@ const About = () => {
   }, []);
 
   return (
-    <div 
+    <motion.div 
       className="w-full h-full flex justify-center items-center gap-[10px]"
       onMouseEnter={() => {
         setIsHovered(1);
@@ -39,6 +40,11 @@ const About = () => {
         setIsHovered(2);
         lottieRef.current.playFromBeginning();
       }}
+
+      animate={{scale: 1}}
+      whileHover={{ scale: 1.1}}
+      whileTap={{ scale: 1.05}} 
+      transition={{ duration: 0.1 }}
     >
       <div className="w-[70px] h-[70px]">
         <Lottie 
@@ -56,7 +62,7 @@ const About = () => {
         percent={currentPercent} 
         txtProps="font-banger font-bold bg-transparent text-7xl"
       />
-    </div>
+    </motion.div>
   );
 };
 

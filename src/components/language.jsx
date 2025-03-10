@@ -1,4 +1,6 @@
 import { useState } from "react";
+import {motion} from "framer-motion";
+
 
 const Language = () => {
   const [selectedLanguage, setSelectedLanguage] = useState('English');
@@ -12,7 +14,12 @@ const Language = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center overflow-hidden font-banger text-4xl gap-[10px]">
+    <motion.div className="w-full h-full flex flex-col justify-center items-center overflow-hidden font-banger text-4xl gap-[10px]"
+        animate={{scale: 1}}
+        whileHover={{ scale: 1.1}}
+        whileTap={{ scale: 1.05}} 
+        transition={{ duration: 0.1 }}
+    >
       <div
         style={{ color: getFontColor('English') }}
         onClick={() => handleLanguageClick('English')}
@@ -27,7 +34,7 @@ const Language = () => {
       >
         日本語
       </div>
-    </div>
+    </motion.div>
   );
 };
 

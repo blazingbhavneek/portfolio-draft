@@ -1,9 +1,10 @@
-/* eslint-disable react/prop-types */
-import Lottie from "lottie-react";
+ import Lottie from "lottie-react";
 import { useState, useRef, useEffect } from "react";
 import ChatIn from '../assets/lottie/chat-in.json';
 import ChatHov from '../assets/lottie/chat-hover.json';
 import PartialText from "./misc/partialText";
+import {motion} from "framer-motion";
+
 
 const Contact = () => {
   const [currentPercent, setCurrentPercent] = useState(0);
@@ -30,7 +31,7 @@ const Contact = () => {
     }, []);
 
   return (
-    <div className="w-full h-full flex justify-center items-center gap-[10px]"
+    <motion.div className="w-full h-full flex justify-center items-center gap-[10px]"
       onMouseEnter={() => {
         setIsHovered(1);
         lottieRef.current.play();
@@ -39,6 +40,10 @@ const Contact = () => {
         setIsHovered(2);
         lottieRef.current.play();
       }}
+      animate={{scale: 1}}
+      whileHover={{ scale: 1.1}}
+      whileTap={{ scale: 1.05}} 
+      transition={{ duration: 0.1 }}
     >
        <div className="w-[50px] h-[50px]">
         <Lottie 
@@ -57,7 +62,7 @@ const Contact = () => {
         percent={currentPercent} 
         txtProps="font-banger font-bold bg-transparent text-5xl"
       />
-    </div>
+    </motion.div>
   )
 }
 
