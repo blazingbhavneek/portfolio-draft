@@ -105,10 +105,8 @@ const Main = () => {
         >
             <Contact></Contact>
         </motion.div>
-    
         </div>
     </div>
-
   )
 }
 

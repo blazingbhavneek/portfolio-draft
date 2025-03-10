@@ -15,6 +15,17 @@ function App() {
           <Route path="/about" element={<About></About>}/>
         </Routes>
       </Router>
+      <footer className="w-full text-center py-1 bg-gray-100 text-gray-600">
+        <p>
+          Made with ❤️ using <span> </span>
+          <a href="https://github.com/blazingbhavneek/portfolio-draft" target="_blank" rel="noopener noreferrer" className="underline">
+            React!
+          </a>
+        </p>
+        <a href="https://lordicon.com/" target="_blank" rel="noopener noreferrer" className="underline">
+          Icons by Lordicon.com
+        </a>
+      </footer>
     </AppContext.Provider>
   )
 }
