@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Main = () => {
     const transition = { type: "spring", stiffness: 80, damping: 30, delay: 0.5 };
-    const [bgColor, setBgColor] = useState(0);
+    const [bgColor, setBgColor] = useState(2);
 
     const about_colors = ['#ff8981', '#FEB335', '#00e09f'];
     const project_colors = ['#1f82fa', '#8b65d0', '#ee426b'];
@@ -27,7 +27,7 @@ const Main = () => {
         setBgColor(bgColor => {
             return (bgColor + 1) % 3;
         });
-        }, 2000); 
+        }, 3000); 
 
         return () => clearInterval(interval); 
     }, []);
@@ -44,7 +44,7 @@ const Main = () => {
             animate={{scale: 1, x: 0, y: 0}}
             transition={transition}
         >
-            <Link to="/about"> 
+            <Link to="/about">
                 <About /> 
             </Link>
         </motion.div>
@@ -64,7 +64,9 @@ const Main = () => {
         animate={{ scale: 1, x: 0, y: 0 }}
         transition={transition}
         >
-            <Projects></Projects>
+            <Link to="/projects">
+                <Projects />
+            </Link>
         </motion.div>
     
         <motion.div className="rounded-3xl col-span-2 row-span-3  flex items-center justify-center"
