@@ -4,11 +4,13 @@ import Lottie from "lottie-react";
 import AccountIn from '../assets/lottie/account-in.json';
 import AccountHov from '../assets/lottie/account-hover.json';
 import {motion} from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
   const [currentPercent, setCurrentPercent] = useState(0);
   const [isHovered, setIsHovered] = useState(-1);
   const lottieRef = useRef();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const duration = 2500; 
@@ -56,7 +58,7 @@ const About = () => {
         />
       </div>
       <PartialText 
-        text="About Me!" 
+        text={t("aboutButton")}
         bgcolor="#feb22a"
         txtcolor="#3c0000"
         percent={currentPercent} 

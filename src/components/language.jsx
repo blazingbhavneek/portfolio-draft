@@ -1,12 +1,15 @@
 import { useState } from "react";
 import {motion} from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 
 const Language = () => {
-  const [selectedLanguage, setSelectedLanguage] = useState('English');
+    const { i18n } = useTranslation();
+  const [selectedLanguage, setSelectedLanguage] = useState('en');
 
   const handleLanguageClick = (language) => {
     setSelectedLanguage(language);
+    i18n.changeLanguage(language)
   };
 
   const getFontColor = (language) => {
@@ -21,15 +24,15 @@ const Language = () => {
         transition={{ duration: 0.1 }}
     >
       <div
-        style={{ color: getFontColor('English') }}
-        onClick={() => handleLanguageClick('English')}
+        style={{ color: getFontColor('en') }}
+        onClick={() => handleLanguageClick('en')}
         className="cursor-pointer"
       >
         English
       </div>
       <div
-        style={{ color: getFontColor('日本語') }}
-        onClick={() => handleLanguageClick('日本語')}
+        style={{ color: getFontColor('jp') }}
+        onClick={() => handleLanguageClick('jp')}
         className="cursor-pointer"
       >
         日本語

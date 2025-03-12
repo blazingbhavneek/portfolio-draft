@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import PartialText from "./misc/partialText";
+import { useTranslation } from "react-i18next";
 
 const images = [
   "../../src/assets/photography/1.webp",
@@ -13,6 +14,7 @@ const images = [
 export default function Photography() {
   const [index, setIndex] = useState(0);
   const [currentPercent, setCurrentPercent] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const duration = 2500; 
@@ -61,7 +63,7 @@ export default function Photography() {
         ))}
       </div>
       <PartialText 
-          text="Photography" 
+          text={t("photographyButton")}
           bgcolor="transparent"
           txtcolor="white"
           txtProps = "font-banger relative p-[5px] text-white text-3xl font-bold z-10"

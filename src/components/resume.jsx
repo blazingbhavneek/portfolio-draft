@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import PartialText from "./misc/partialText";
 import {motion} from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 
 const Resume = () => {
@@ -23,6 +24,7 @@ const Resume = () => {
     
         return () => clearInterval(interval);
       }, []);
+      const { t } = useTranslation();
 
   return (
     <motion.div className="w-full h-full flex flex-col justify-center items-center overflow-hidden font-banger text-4xl gap-[10px]"
@@ -33,7 +35,7 @@ const Resume = () => {
       transition={{ duration: 0.1 }}
     >
       <PartialText 
-        text="Resume" 
+        text={t("resumeButton")}
         bgcolor="#b9d025"
         txtcolor="#172303"
         percent={currentPercent} 

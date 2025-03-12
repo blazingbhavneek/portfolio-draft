@@ -20,7 +20,7 @@ import { motion,
       if (pRef.current) {
         setTextWidth(pRef.current.offsetWidth);
       }
-    }, []);
+    }, [props.text]);    
   
     const baseX = useMotionValue(0);
     const { scrollY } = useScroll();

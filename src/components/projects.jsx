@@ -4,12 +4,14 @@ import CodeIn from '../assets/lottie/code-in.json';
 import CodeHov from '../assets/lottie/code-hover.json';
 import PartialText from "./misc/partialText";
 import {motion} from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 
 const Projects = () => {
   const [currentPercent, setCurrentPercent] = useState(0);
   const [isHovered, setIsHovered] = useState(-1);
   const lottieRef = useRef();
+  const { t } = useTranslation();
 
   useEffect(() => {
         const duration = 2500; 
@@ -55,7 +57,7 @@ const Projects = () => {
         />
       </div>
       <PartialText 
-        text="Projects" 
+        text={t("projectButton")}
         bgcolor="#1f82fa"
         txtcolor="#fdebc2"
         percent={currentPercent} 

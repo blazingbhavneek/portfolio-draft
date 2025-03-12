@@ -5,6 +5,7 @@ import Main from './pages/main';
 import About from './pages/about';
 import Projects from './pages/projects';
 
+
 export const AppContext = createContext();
 
 function App() {

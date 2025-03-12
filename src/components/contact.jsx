@@ -9,11 +9,13 @@ import Icon2 from '../assets/icons/github.svg';
 import Icon3 from '../assets/icons/linkedin.svg';
 import Icon4 from '../assets/icons/line.svg';
 import Icon5 from '../assets/icons/instagram.svg';
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
   const [currentPercent, setCurrentPercent] = useState(0);
   const [isHovered, setIsHovered] = useState(-1);
   const lottieRef = useRef();
+  const { t } = useTranslation();
 
   const icons = [
     { id: 1, icon: Icon1, link: "https://example.com/icon1" },
@@ -79,7 +81,7 @@ const Contact = () => {
         </>
       ) : (
         <PartialText
-          text="Lets Connect..."
+          text={t("connectButton")}
           bgcolor="#480000"
           txtcolor="#fdebc2"
           percent={currentPercent}
